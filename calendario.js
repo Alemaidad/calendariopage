@@ -59,6 +59,7 @@ function closeModal(id) {
 }
 
 // Guardar evento en localStorage
+// ------------------------------------------------------------------------modificable
 function saveEvent(e) {
   e.preventDefault();
   const form = document.getElementById("eventForm");
@@ -83,6 +84,7 @@ function saveEvent(e) {
   renderCalendar();
   openEventListModal(dateKey); // Actualiza la lista después de guardar
 }
+// --------------------------------------------------------------------------- fin modificable
 
 // Mostrar eventos en el modal de lista
 function openEventListModal(dateKey) {
