@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calendario</title>
+  <link rel="stylesheet" href="calender.css">
+</head>
+<body>
+    <div class="sidebar">
+        <button class="sidebar-button" id="calendario">Calendario</button>
+        <button class="sidebar-button">Inventario</button>
+        <button class="sidebar-button">Equipos</button>
+    </div>
+
+    <div class="container">
+         <div class="calendar-header">
+          <button onclick="prevMonth()">&lt;</button>
+          <h2 id="monthDisplay"></h2>
+          <button onclick="nextMonth()">&gt;</button>
+        </div>
+        <div class="day-names">
+           <div>LUNES</div><div>MARTES</div>
+            <div>MIERCOLES</div><div>JUEVES</div><div>VIERNES</div><div>SABADO</div> <div>DOMINGO</div>
+            
+        </div>
+         <div class="calendar-grid" id="calendarDays"> <script src="calendario.js"></script></div>
+    </div>
+    
+<!-- Modal Lista de Eventos -->
+<div id="eventListModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('eventListModal')">&times;</span>
+    <h2>Eventos guardados</h2>
+    <div id="eventList" class="event-list"></div>
+    <button onclick="openModal('eventFormModal')" style="margin-top: 15px;">Agregar otro evento</button>
+  </div>
+</div>
+
+<!-- Modal Formulario de Evento -->
+<div id="eventFormModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('eventFormModal')">&times;</span>
+    <form id="eventForm" class="event-form" onsubmit="saveEvent(event)">
+      <h2>Agregar Evento</h2>
+      <input type="text" id="nombre" placeholder="Nombre de embarcación" required>
+
+      <label>Fecha de entrada:</label>
+      <input type="date" id="fechaEntrada" required>
+
+      <label>Hora de entrada:</label>
+      <input type="time" id="horaEntrada" required>
+
+      <label>Fecha de salida:</label>
+      <input type="date" id="fechaSalida" required>
+
+      <label>Hora de salida:</label>
+      <input type="time" id="horaSalida" required>
+
+      <label>Tipo de embarcación:</label>
+      <div>
+        <input type="radio" name="tipo" value="Embarcación 1" required> Embarcación 1
+        <input type="radio" name="tipo" value="Embarcación 2"> Embarcación 2
+      </div>
+
+      <label>Equipo a cargo:</label>
+      <div>
+        <input type="radio" name="equipo" value="Equipo A" required> Equipo A
+        <input type="radio" name="equipo" value="Equipo B"> Equipo B
+      </div>
+
+      <button type="submit">Guardar Evento</button>
+    </form>
+  </div>
+</div>
+
+
+  </body>
+</html>

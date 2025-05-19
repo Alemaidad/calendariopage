@@ -1,0 +1,251 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/calendario\ oceanix/img/img1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    display: flex;
+    height: 100vh;
+}
+
+/* barra lateral */
+.sidebar {
+    background-color: #ffffff20;
+    backdrop-filter: blur(60px);
+   
+    color: white;
+    width: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+/* botones de la barra lateral */
+.sidebar-button {
+  
+    background: none;
+    color: white;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    padding: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+}
+#calendario{
+ border: solid 1px #ddd ;
+}
+
+.sidebar-button:hover {
+    border: solid 1px #ddd ;
+}
+
+/* contennedor de todos los elementos del calendario */
+.container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.515);
+    backdrop-filter: blur(8px);
+
+}
+
+/* header del calendario botones y mes */
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    max-height: 50px;
+    padding: 20px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.778);
+}
+.calendar-header h2{
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.calendar-header button {
+    background-color: #ffffff00;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+
+}
+
+/* contenedor de los nombres de los dias */
+.day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.484);
+}
+
+.day-names div {
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    padding: 5%;
+    max-width: 90px;
+    margin-left: 20%;
+    position: relative;
+    color: rgba(255, 255, 255, 0.899);
+   
+}
+/* calendario general */
+ .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    margin-top: 1%;
+  }
+  
+  .calendar-day {
+    background-color: #ffffff8a;
+    color: #000000;
+    border-radius: 12px;
+    padding: 5%;
+    margin-left: 20%;
+    max-width: 90px;
+    max-height: 70px;
+    text-align:left;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0,3s ease;
+  }
+  
+  .calendar-day:hover {
+    background-color: #333;
+  }
+  /* formulario */
+  .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1e1e1e;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+.event-form input[type="text"],
+.event-form input[type="date"],
+.event-form input[type="time"] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+.event-form button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.event-list-item {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+.calendar-day.has-event {
+    border: 2px solid #00ffcc;
+    background-color: #ffffffbb;
+    font-weight: bold;
+    position: relative;
+}
+
+.calendar-day.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #00ffcc;
+    border-radius: 50%;
+}
+
+
+
+/* _________________________________________________________________________________________________ */
+
+
+  
+ 
